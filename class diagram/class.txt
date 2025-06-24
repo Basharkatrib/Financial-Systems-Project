@@ -1,0 +1,51 @@
+
+class User {
+   id: int
+   email: String
+   verified: bool
+   verifiedR: bool
+   password: String
+   username: String
+   location: String
+   role: String
+}
+
+class Order {
+   id: int
+   state: String
+}
+
+class Medicine {
+   id: int
+   pharmaceuticalFilter: String
+   pharmaceuticalIndications: String
+   medicineImageUrl: String
+   barcode: String
+   price: double
+   quantity: int
+   expiredDate: DateTime
+   lowBound: double
+}
+
+class AlternativeMedicine {
+   id: int
+   altNameId: String
+}
+
+class OrderMedicineRelation {
+   id: int
+   count: int
+   price: double
+}
+
+class Notification {
+   id: int
+   description: String
+} 
+
+
+User "1" --> "0..*" Order
+User "1" --> "0..*" Notification
+Order "1" --> "0..*" OrderMedicineRelation
+Medicine "1" --> "0..*" OrderMedicineRelation
+Medicine "1" --> "0..*" AlternativeMedicine
