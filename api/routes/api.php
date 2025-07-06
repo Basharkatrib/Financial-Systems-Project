@@ -10,3 +10,5 @@ Route::get('/medications', [MedicationController::class, 'index']);
 Route::post('/medications', [MedicationController::class, 'store']);
 Route::put('/medications/{id}', [MedicationController::class, 'update']);
 Route::delete('/medications/{id}', [MedicationController::class, 'destroy']);
+Route::get('/medications/{id}', [MedicationController::class, 'show']);
+
