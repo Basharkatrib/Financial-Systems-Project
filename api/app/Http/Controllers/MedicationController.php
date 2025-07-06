@@ -43,5 +43,11 @@ class MedicationController extends Controller
     {
         return response()->json(Medication::all());
     }
+
+    public function show($id)
+    {
+        $med = Medication::findOrFail($id);
+        return response()->json($med);
+    }
 }
 
